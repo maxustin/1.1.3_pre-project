@@ -4,16 +4,16 @@ import java.sql.*;
 
 public class Util {
     // реализуйте настройку соеденения с БД
-    private final String HOST = "jdbc:mysql://localhost:3306/userbase";
-    private final String USERNAME = "root";
-    private final String PASSWORD = "u6wf4mkdjb";
+    private static final String HOST = "jdbc:mysql://localhost:3306/userbase";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "u6wf4mkdjb";
 
-    private Connection connection;
+    private static Connection connection;
 
     public Util() {
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         try {
             connection = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
             connection.setAutoCommit(false);

@@ -6,30 +6,30 @@ import jm.task.core.jdbc.model.User;
 import java.util.*;
 
 public class UserServiceImpl implements UserService {
-    private UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
+    private UserDao userDao = new UserDaoJDBCImpl();
 
     public void createUsersTable() {
-        userDaoJDBC.createUsersTable();
+        userDao.createUsersTable();
     }
 
     public void dropUsersTable() {
-        userDaoJDBC.dropUsersTable();
+        userDao.dropUsersTable();
     }
 
     public void saveUser(String firstName, String lastName, byte age) {
-        userDaoJDBC.saveUser(firstName, lastName, age);
+        userDao.saveUser(firstName, lastName, age);
         System.out.println("User c именем - " + firstName + " добавлен в базу данных");
     }
 
     public void removeUserById(long id) {
-        userDaoJDBC.removeUserById(id);
+        userDao.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        return userDaoJDBC.getAllUsers();
+        return userDao.getAllUsers();
     }
 
     public void cleanUsersTable() {
-        userDaoJDBC.cleanUsersTable();
+        userDao.cleanUsersTable();
     }
 }
